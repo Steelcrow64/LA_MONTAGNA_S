@@ -1,22 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject deathUI;
+
     public float speed = 1;
 
     Rigidbody2D rb;
     [SerializeField] Transform groundCheckCollider;
     [SerializeField] LayerMask groundLayer;
 
-    const float groundCheckRadius = 0.2f;
+    public float groundCheckRadius = 1f;
     float horizontalValue;
     [SerializeField] float jumpPower;
     
     [SerializeField] bool isGrounded = false;
     bool facignRight = true;
     bool jump;
+    bool isDead;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isDead) return;
         horizontalValue = Input.GetAxisRaw("Horizontal");
 
         //If we press Jump button enable jump
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDead) return;
         GroundCheck();
         Move(horizontalValue, jump);
     }
@@ -53,13 +59,14 @@ public class PlayerController : MonoBehaviour
 
     private void Move(float dir, bool jumpFlag)
     {
+        //Debug.Log(isGrounded+""+ jumpFlag);
 
-        if(isGrounded && jumpFlag)
+        if (isGrounded && jumpFlag)
         {
             isGrounded = false;
             jumpFlag = false;
             //Add jump force
-            rb.AddForce(new Vector2(0f, jumpPower));
+            rb.AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
         }
 
         #region Move
@@ -87,6 +94,17 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        transform.GetChild(0).gameObject.SetActive(false);
+        isDead = true;
+        rb.velocity = Vector3.zero;
+        rb.gravityScale = 0;
+        deathUI.SetActive(true);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere (groundCheckCollider.position, groundCheckRadius);
     }
 }

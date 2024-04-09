@@ -30,10 +30,13 @@ public class EnemyAI : MonoBehaviour
         //Make the points children of waypoints object
         GameObject p1 = new GameObject("Point 1"); p1.transform.SetParent(waypoints.transform); p1.transform.position = root.transform.position;
         GameObject p2 = new GameObject("Point 2"); p2.transform.SetParent(waypoints.transform); p2.transform.position = root.transform.position;
-
+        GameObject p3 = new GameObject("Point 3"); p3.transform.SetParent(waypoints.transform); p3.transform.position = root.transform.position;
+        GameObject p4 = new GameObject("Point 4"); p4.transform.SetParent(waypoints.transform); p4.transform.position = root.transform.position;
         //Init points list then add the points to it
         points.Add(p1.transform);
         points.Add(p2.transform);
+        points.Add(p3.transform);
+        points.Add(p4.transform);
     }
 
     private void Update()

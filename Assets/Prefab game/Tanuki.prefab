@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathUI: {fileID: 0}
+  PauseMenu: {fileID: 0}
   speed: 5
   groundCheckCollider: {fileID: 6813433715001434733}
   groundLayer:

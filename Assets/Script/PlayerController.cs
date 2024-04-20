@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
     public GameObject deathUI;
+
+    public PauseMenu PauseMenu;
 
     public float speed = 1;
 
@@ -22,6 +25,8 @@ public class PlayerController : MonoBehaviour
     bool jump;
     bool isDead;
 
+    private bool IsInvincible;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +37,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(isDead) return;
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            if (PauseMenu.gameObject.active)
+            {
+                PauseMenu.Resume();
+            }
+            else PauseMenu.Pause();
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            IsInvincible = !IsInvincible;
+        }
+        if (IsInvincible)
+        {
+            return;
+        }
+
         horizontalValue = Input.GetAxisRaw("Horizontal");
 
         //If we press Jump button enable jump
@@ -94,7 +116,8 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        //Destroy(gameObject);
+        if (IsInvincible)
+            return;
         transform.GetChild(0).gameObject.SetActive(false);
         isDead = true;
         rb.velocity = Vector3.zero;

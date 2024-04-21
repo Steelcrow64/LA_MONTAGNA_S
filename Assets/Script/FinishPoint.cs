@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class FinishPoint : MonoBehaviour
 {
     [SerializeField] GameObject Victory;
+    [SerializeField] GameObject GameOver;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,11 +13,10 @@ public class FinishPoint : MonoBehaviour
             Victory.SetActive(true);
             Time.timeScale = 0;
         }
-        /*
         else if (collision.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<PlayerController>().Death();
+            GameOver.SetActive(true);
+            Time.timeScale = 0;
         }
-        */
     }
 }

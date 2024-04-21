@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move(float dir, bool jumpFlag)
     {
-        //Debug.Log(isGrounded+""+ jumpFlag);
 
         if (isGrounded && jumpFlag)
         {

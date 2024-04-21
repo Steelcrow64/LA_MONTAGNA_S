@@ -3,23 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class FinishPoint : MonoBehaviour
 {
+    [SerializeField] GameObject Victory;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.tag == "Player")
         {
-            // go to next level
-            UnlockNewLevel();
-            SceneController.instance.NextLevel();
+            Victory.SetActive(true);
+            Time.timeScale = 0;
         }
-    }
-
-    void UnlockNewLevel()
-    {
-        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"));
+        /*
+        else if (collision.tag == "Enemy")
         {
-            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
-            PlayerPrefs.Save();
+            collision.gameObject.GetComponent<PlayerController>().Death();
         }
+        */
     }
 }

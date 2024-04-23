@@ -1717,7 +1717,7 @@ GameObject:
   - component: {fileID: 269783576}
   - component: {fileID: 269783575}
   m_Layer: 8
-  m_Name: Wall 1 (2)
+  m_Name: Wall 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1827,7 +1827,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 1}
+  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2856,7 +2856,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 1}
+  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6387,7 +6387,7 @@ GameObject:
   - component: {fileID: 893291225}
   - component: {fileID: 893291224}
   m_Layer: 8
-  m_Name: Wall 1 (3)
+  m_Name: Wall 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6497,7 +6497,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 1}
+  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10900,7 +10900,7 @@ GameObject:
   - component: {fileID: 1422083852}
   - component: {fileID: 1422083851}
   m_Layer: 8
-  m_Name: Wall 1 (1)
+  m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11010,7 +11010,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 1}
+  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13725,7 +13725,7 @@ GameObject:
   - component: {fileID: 1863191512}
   - component: {fileID: 1863191511}
   m_Layer: 8
-  m_Name: Wall 1 (4)
+  m_Name: Wall 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13835,7 +13835,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 1}
+  m_Color: {r: 0.20784314, g: 0.40784314, b: 0.1764706, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
